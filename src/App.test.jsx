@@ -1,7 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import enzyme, { mount } from 'enzyme';
+import enzyme, { mount, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import sinon from 'sinon';
 import App, { API_URL } from './App';
 import Input from './components/Input';
 
@@ -12,7 +12,9 @@ const constraintsResponse = {
   termInterval: { min: 3, max: 30, step: 1, defaultValue: 15 }
 };
 
-const getConstraints = () => Promise.resolve(constraintsResponse);
+const fetchConstraints = sinon
+  .stub()
+  .returns(Promise.resolve(constraintsResponse));
 
 const offerResponse = {
   totalPrincipal: '400',
@@ -22,20 +24,19 @@ const offerResponse = {
   monthlyPayment: 32
 };
 
-const getOffer = () => Promise.resolve(offerResponse);
+const fetchOffer = sinon.stub().returns(Promise.resolve(offerResponse));
 
-console.log(API_URL);
 describe('App component', () => {
   let wrapper;
 
   beforeEach(() => {
     wrapper = mount(
-      <App getConstraints={getConstraints} getOffer={getOffer} />
+      <App fetchConstraints={fetchConstraints} fetchOffer={fetchOffer} />
     );
   });
 
   it('should contain 2 Input components', done => {
-    getConstraints().then(() => {
+    Promise.all([fetchConstraints(), fetchOffer()]).then(() => {
       wrapper.update();
       expect(wrapper.find(Input).length).toEqual(2);
       done();
@@ -43,7 +44,7 @@ describe('App component', () => {
   });
 
   it('should fetch constraints and set them in the state', done => {
-    getConstraints().then(() => {
+    fetchConstraints().then(() => {
       wrapper.update();
       expect(wrapper.state('amountInterval')).toEqual(
         constraintsResponse.amountInterval
@@ -55,9 +56,22 @@ describe('App component', () => {
     });
   });
 
+  it('should update amount in state on amount change', () => {
+    wrapper.instance().onAmountChange({ target: { value: '1000' } });
+    wrapper.update();
+    expect(wrapper.state('amount')).toEqual('1000');
+  });
+
   xit('should fetch offer when amount changed', done => {
-    getConstraints().then(() => {
-      wrapper.update;
+    fetchConstraints().then(() => {
+      wrapper.update();
+      const input = wrapper.find('input').at(0);
+      console.log(input.debug());
+      input.simulate('change', { target: { value: '500' } });
+      fetchOffer().then(() => {
+        wrapper.update();
+      });
+      done();
     });
   });
 });

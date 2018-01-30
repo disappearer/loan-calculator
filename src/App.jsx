@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Input from './components/Input';
+const debounce = require('debounce');
 
 class App extends Component {
   constructor(props) {
@@ -17,10 +18,13 @@ class App extends Component {
     };
     this.onAmountChange = this.onAmountChange.bind(this);
     this.onTermChange = this.onTermChange.bind(this);
+    this.getOffer = this.getOffer.bind(this);
+    this.debouncedGetOffer = debounce(this.getOffer, 200);
   }
 
   componentDidMount() {
-    this.props.getConstraints().then(json => {
+    const { fetchConstraints } = this.props;
+    fetchConstraints().then(json => {
       const { amountInterval, termInterval } = json;
       this.setState({
         amountInterval,
@@ -28,40 +32,25 @@ class App extends Component {
         amount: amountInterval.defaultValue,
         term: termInterval.defaultValue
       });
-      this.props
-        .getOffer(amountInterval.defaultValue, termInterval.defaultValue)
-        .then(json => {
-          const {
-            totalCostOfCredit,
-            totalRepayableAmount,
-            monthlyPayment
-          } = json;
-          this.setState({
-            totalCostOfCredit,
-            totalRepayableAmount,
-            monthlyPayment
-          });
-        });
+      this.getOffer(amountInterval.defaultValue, termInterval.defaultValue);
     });
   }
 
   onAmountChange(e) {
     const amount = e.target.value;
     this.setState({ amount });
-    this.props.getOffer(amount, this.state.term).then(json => {
-      const { totalCostOfCredit, totalRepayableAmount, monthlyPayment } = json;
-      this.setState({
-        totalCostOfCredit,
-        totalRepayableAmount,
-        monthlyPayment
-      });
-    });
+    this.debouncedGetOffer(amount, this.state.term);
   }
 
   onTermChange(e) {
     const term = e.target.value;
     this.setState({ term });
-    this.props.getOffer(this.state.amount, term).then(json => {
+    this.debouncedGetOffer(this.state.amount, term);
+  }
+
+  getOffer(amount, term) {
+    const { fetchOffer } = this.props;
+    fetchOffer(amount, term).then(json => {
       const { totalCostOfCredit, totalRepayableAmount, monthlyPayment } = json;
       this.setState({
         totalCostOfCredit,
