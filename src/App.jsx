@@ -3,9 +3,6 @@ import logo from './logo.svg';
 import './App.css';
 import Input from './components/Input';
 
-export const API_URL =
-  'https://js-developer-second-round.herokuapp.com/api/v1/application';
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -23,37 +20,35 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch(API_URL + '/constraints')
-      .then(response => response.json())
-      .then(json => {
-        const { amountInterval, termInterval } = json;
-        this.setState({
-          amountInterval,
-          termInterval,
-          amount: amountInterval.defaultValue,
-          term: termInterval.defaultValue
-        });
-        getOffer(amountInterval.defaultValue, termInterval.defaultValue).then(
-          json => {
-            const {
-              totalCostOfCredit,
-              totalRepayableAmount,
-              monthlyPayment
-            } = json;
-            this.setState({
-              totalCostOfCredit,
-              totalRepayableAmount,
-              monthlyPayment
-            });
-          }
-        );
+    this.props.getConstraints().then(json => {
+      const { amountInterval, termInterval } = json;
+      this.setState({
+        amountInterval,
+        termInterval,
+        amount: amountInterval.defaultValue,
+        term: termInterval.defaultValue
       });
+      this.props
+        .getOffer(amountInterval.defaultValue, termInterval.defaultValue)
+        .then(json => {
+          const {
+            totalCostOfCredit,
+            totalRepayableAmount,
+            monthlyPayment
+          } = json;
+          this.setState({
+            totalCostOfCredit,
+            totalRepayableAmount,
+            monthlyPayment
+          });
+        });
+    });
   }
 
   onAmountChange(e) {
     const amount = e.target.value;
     this.setState({ amount });
-    getOffer(amount, this.state.term).then(json => {
+    this.props.getOffer(amount, this.state.term).then(json => {
       const { totalCostOfCredit, totalRepayableAmount, monthlyPayment } = json;
       this.setState({
         totalCostOfCredit,
@@ -66,7 +61,7 @@ class App extends Component {
   onTermChange(e) {
     const term = e.target.value;
     this.setState({ term });
-    getOffer(this.state.amount, term).then(json => {
+    this.props.getOffer(this.state.amount, term).then(json => {
       const { totalCostOfCredit, totalRepayableAmount, monthlyPayment } = json;
       this.setState({
         totalCostOfCredit,
@@ -109,10 +104,5 @@ class App extends Component {
     );
   }
 }
-
-const getOffer = (amount, term) => {
-  const offerUrl = API_URL + `/first-loan-offer/?amount=${amount}&term=${term}`;
-  return fetch(offerUrl).then(response => response.json());
-};
 
 export default App;

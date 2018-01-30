@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import enzyme, { shallow } from 'enzyme';
+import sinon from 'sinon';
 import Adapter from 'enzyme-adapter-react-16';
 import Input from './Input';
 
@@ -8,7 +9,7 @@ enzyme.configure({ adapter: new Adapter() });
 
 describe('Input component', () => {
   let wrapper;
-  const onChangeSpy = jest.fn();
+  const onChangeSpy = sinon.spy();
 
   beforeEach(() => {
     wrapper = shallow(
@@ -27,9 +28,11 @@ describe('Input component', () => {
     expect(wrapper.find('option').length).toBe(5);
   });
 
-  xit('should call props.onChange when change happens', () => {
+  it('should call props.onChange when change happens', () => {
     const input = wrapper.find('input');
-    input.simulate('change', { target: { value: '3' } });
-    expect(onChangeSpy.calls.length).toBe(1);
+    const event = { target: { value: '3' } };
+    input.simulate('change', event);
+    expect(onChangeSpy.calledOnce).toBe(true);
+    expect(onChangeSpy.calledWith(event)).toBe(true);
   });
 });
