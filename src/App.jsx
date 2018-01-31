@@ -16,6 +16,7 @@ class App extends Component {
       totalRepayableAmount: 0,
       monthlyPayment: 0
     };
+    this.cache = {};
     this.onAmountChange = this.onAmountChange.bind(this);
     this.onTermChange = this.onTermChange.bind(this);
     this.getOffer = this.getOffer.bind(this);
@@ -50,14 +51,29 @@ class App extends Component {
 
   getOffer(amount, term) {
     const { fetchOffer } = this.props;
-    fetchOffer(amount, term).then(json => {
-      const { totalCostOfCredit, totalRepayableAmount, monthlyPayment } = json;
-      this.setState({
-        totalCostOfCredit,
-        totalRepayableAmount,
-        monthlyPayment
+    const key = `${amount}:${term}`;
+    if (key in this.cache) {
+      // log for demonstration purpose
+      console.log('cached');
+      this.setState(this.cache[key]);
+    } else {
+      fetchOffer(amount, term).then(json => {
+        const {
+          totalCostOfCredit,
+          totalRepayableAmount,
+          monthlyPayment
+        } = json;
+        const cacheObject = {
+          totalCostOfCredit,
+          totalRepayableAmount,
+          monthlyPayment
+        };
+        this.cache[key] = cacheObject;
+        // log for demonstration purpose
+        console.log('fetched');
+        this.setState(cacheObject);
       });
-    });
+    }
   }
 
   render() {
