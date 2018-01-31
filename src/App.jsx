@@ -17,14 +17,11 @@ class App extends Component {
       monthlyPayment: 0
     };
     this.cache = {};
-    this.onAmountChange = this.onAmountChange.bind(this);
-    this.onTermChange = this.onTermChange.bind(this);
-    this.getOffer = this.getOffer.bind(this);
     this.debouncedGetOffer = debounce(this.getOffer, 200);
   }
 
   componentDidMount() {
-    const { fetchConstraints } = this.props;
+    const { fetchConstraints } = this.props.api;
     fetchConstraints().then(json => {
       const { amountInterval, termInterval } = json;
       this.setState({
@@ -50,7 +47,7 @@ class App extends Component {
   }
 
   getOffer(amount, term) {
-    const { fetchOffer } = this.props;
+    const { fetchOffer } = this.props.api;
     const key = `${amount}:${term}`;
     if (key in this.cache) {
       // log for demonstration purpose
@@ -77,33 +74,42 @@ class App extends Component {
   }
 
   render() {
+    const {
+      amountInterval,
+      termInterval,
+      amount,
+      term,
+      totalCostOfCredit,
+      totalRepayableAmount,
+      monthlyPayment
+    } = this.state;
     return (
       <div className="App">
-        {this.state.amountInterval ? (
+        {amountInterval ? (
           <Input
             label="Total Amount"
-            min={this.state.amountInterval.min}
-            max={this.state.amountInterval.max}
-            step={this.state.amountInterval.step}
-            value={this.state.amount}
-            onChange={this.onAmountChange}
+            min={amountInterval.min}
+            max={amountInterval.max}
+            step={amountInterval.step}
+            value={amount}
+            onChange={e => this.onAmountChange(e)}
           />
         ) : null}
-        {this.state.termInterval ? (
+        {termInterval ? (
           <Input
             label="Term"
-            min={this.state.termInterval.min}
-            max={this.state.termInterval.max}
-            step={this.state.termInterval.step}
-            value={this.state.term}
-            onChange={this.onTermChange}
+            min={termInterval.min}
+            max={termInterval.max}
+            step={termInterval.step}
+            value={term}
+            onChange={e => this.onTermChange(e)}
           />
         ) : null}
 
         <div>
-          <p>Total cost of credit: {this.state.totalCostOfCredit}</p>
-          <p>Total repayable amount: {this.state.totalRepayableAmount}</p>
-          <p>Monthly payment: {this.state.monthlyPayment}</p>
+          <p>Total cost of credit: {totalCostOfCredit}</p>
+          <p>Total repayable amount: {totalRepayableAmount}</p>
+          <p>Monthly payment: {monthlyPayment}</p>
         </div>
       </div>
     );

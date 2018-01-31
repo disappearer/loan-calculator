@@ -12,10 +12,6 @@ const constraintsResponse = {
   termInterval: { min: 3, max: 30, step: 1, defaultValue: 15 }
 };
 
-const fetchConstraints = sinon
-  .stub()
-  .returns(Promise.resolve(constraintsResponse));
-
 const offerResponse = {
   totalPrincipal: '400',
   term: '15',
@@ -24,19 +20,21 @@ const offerResponse = {
   monthlyPayment: 32
 };
 
-const fetchOffer = sinon.stub().returns(Promise.resolve(offerResponse));
+const api = {
+  fetchConstraints: sinon.stub().returns(Promise.resolve(constraintsResponse)),
+
+  fetchOffer: sinon.stub().returns(Promise.resolve(offerResponse))
+};
 
 describe('App component', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = mount(
-      <App fetchConstraints={fetchConstraints} fetchOffer={fetchOffer} />
-    );
+    wrapper = mount(<App api={api} />);
   });
 
   it('should contain 2 Input components', done => {
-    Promise.all([fetchConstraints(), fetchOffer()]).then(() => {
+    api.fetchConstraints().then(() => {
       wrapper.update();
       expect(wrapper.find(Input).length).toEqual(2);
       done();
@@ -44,7 +42,7 @@ describe('App component', () => {
   });
 
   it('should fetch constraints and set them in the state', done => {
-    fetchConstraints().then(() => {
+    api.fetchConstraints().then(() => {
       wrapper.update();
       expect(wrapper.state('amountInterval')).toEqual(
         constraintsResponse.amountInterval
