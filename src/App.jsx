@@ -41,7 +41,7 @@ const App = ({
         />
       </div>
     ) : (
-      'Fetching constraints...'
+      <div>Fetching constraints...</div>
     )}
     {!isFetchingOffer ? (
       <div>
@@ -50,7 +50,7 @@ const App = ({
         <p>Monthly payment: {monthlyPayment}</p>
       </div>
     ) : (
-      'Fetching offer...'
+      <div>Fetching offer...</div>
     )}
   </div>
 );

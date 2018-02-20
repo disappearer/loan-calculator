@@ -13,8 +13,9 @@ describe('Input component', () => {
 
   beforeEach(() => {
     wrapper = shallow(
-      <Input min="1" max="5" step="1" onChange={onChangeSpy} />
+      <Input label="Amount" min={1} max={5} step={1} onChange={onChangeSpy} />
     );
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should contain an input of type range', () => {

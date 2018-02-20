@@ -26,6 +26,20 @@ const api = {
   fetchOffer: sinon.stub().returns(Promise.resolve(offerResponse))
 };
 
+const props = {
+  amountInterval: constraintsResponse.amountInterval,
+  termInterval: constraintsResponse.termInterval,
+  amount: constraintsResponse.amountInterval.defaultValue,
+  term: constraintsResponse.termInterval.defaultValue,
+  totalCostOfCredit: offerResponse.totalCostOfCredit,
+  totalRepayableAmount: offerResponse.totalRepayableAmount,
+  monthlyPayment: offerResponse.monthlyPayment,
+  onAmountChange: () => {},
+  onTermChange: () => {},
+  isFetchingConstraints: false,
+  isFetchingOffer: false
+};
+
 xdescribe('App component', () => {
   let wrapper;
 
@@ -37,38 +51,6 @@ xdescribe('App component', () => {
     api.fetchConstraints().then(() => {
       wrapper.update();
       expect(wrapper.find(Input).length).toEqual(2);
-      done();
-    });
-  });
-
-  it('should fetch constraints and set them in the state', done => {
-    api.fetchConstraints().then(() => {
-      wrapper.update();
-      expect(wrapper.state('amountInterval')).toEqual(
-        constraintsResponse.amountInterval
-      );
-      expect(wrapper.state('termInterval')).toEqual(
-        constraintsResponse.termInterval
-      );
-      done();
-    });
-  });
-
-  it('should update amount in state on amount change', () => {
-    wrapper.instance().onAmountChange({ target: { value: '1000' } });
-    wrapper.update();
-    expect(wrapper.state('amount')).toEqual('1000');
-  });
-
-  xit('should fetch offer when amount changed', done => {
-    fetchConstraints().then(() => {
-      wrapper.update();
-      const input = wrapper.find('input').at(0);
-      console.log(input.debug());
-      input.simulate('change', { target: { value: '500' } });
-      fetchOffer().then(() => {
-        wrapper.update();
-      });
       done();
     });
   });

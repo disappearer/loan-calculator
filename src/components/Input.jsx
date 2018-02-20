@@ -1,19 +1,20 @@
 import React from 'react';
 import * as _ from 'lodash';
+import PropTypes from 'prop-types';
 
-const Input = props => (
+const Input = ({ label, min, max, step, value, onChange }) => (
   <div>
-    <div>{props.label}</div>
+    <div>{label}</div>
     <input
       type="range"
-      min={props.min}
-      max={props.max}
-      step={props.step}
-      value={props.value}
-      onChange={props.onChange}
+      min={min}
+      max={max}
+      step={step}
+      value={value}
+      onChange={onChange}
     />
-    <select value={props.value} onChange={props.onChange}>
-      {_.range(props.min, +props.max + 1, props.step).map(value => (
+    <select value={value} onChange={onChange}>
+      {_.range(min, +max + 1, step).map(value => (
         <option value={value} key={value}>
           {value}
         </option>
@@ -21,5 +22,13 @@ const Input = props => (
     </select>
   </div>
 );
+
+Input.propTypes = {
+  label: PropTypes.string.isRequired,
+  min: PropTypes.number.isRequired,
+  max: PropTypes.number.isRequired,
+  step: PropTypes.number.isRequired,
+  onChange: PropTypes.func.isRequired
+};
 
 export default Input;

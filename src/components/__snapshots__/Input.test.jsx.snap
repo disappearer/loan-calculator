@@ -1,0 +1,1177 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component should call props.onChange when change happens 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Input
+    label="Amount"
+    max={5}
+    min={1}
+    onChange={[Function]}
+    step={1}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div>
+          Amount
+</div>,
+        <input
+          max={5}
+          min={1}
+          onChange={[Function]}
+          step={1}
+          type="range"
+          value={undefined}
+/>,
+        <select
+          onChange={[Function]}
+          value={undefined}
+>
+          <option
+                    value={1}
+          >
+                    1
+          </option>
+          <option
+                    value={2}
+          >
+                    2
+          </option>
+          <option
+                    value={3}
+          >
+                    3
+          </option>
+          <option
+                    value={4}
+          >
+                    4
+          </option>
+          <option
+                    value={5}
+          >
+                    5
+          </option>
+</select>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Amount",
+        },
+        "ref": null,
+        "rendered": "Amount",
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "max": 5,
+          "min": 1,
+          "onChange": [Function],
+          "step": 1,
+          "type": "range",
+          "value": undefined,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <option
+              value={1}
+>
+              1
+</option>,
+            <option
+              value={2}
+>
+              2
+</option>,
+            <option
+              value={3}
+>
+              3
+</option>,
+            <option
+              value={4}
+>
+              4
+</option>,
+            <option
+              value={5}
+>
+              5
+</option>,
+          ],
+          "onChange": [Function],
+          "value": undefined,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "1",
+            "nodeType": "host",
+            "props": Object {
+              "children": 1,
+              "value": 1,
+            },
+            "ref": null,
+            "rendered": 1,
+            "type": "option",
+          },
+          Object {
+            "instance": null,
+            "key": "2",
+            "nodeType": "host",
+            "props": Object {
+              "children": 2,
+              "value": 2,
+            },
+            "ref": null,
+            "rendered": 2,
+            "type": "option",
+          },
+          Object {
+            "instance": null,
+            "key": "3",
+            "nodeType": "host",
+            "props": Object {
+              "children": 3,
+              "value": 3,
+            },
+            "ref": null,
+            "rendered": 3,
+            "type": "option",
+          },
+          Object {
+            "instance": null,
+            "key": "4",
+            "nodeType": "host",
+            "props": Object {
+              "children": 4,
+              "value": 4,
+            },
+            "ref": null,
+            "rendered": 4,
+            "type": "option",
+          },
+          Object {
+            "instance": null,
+            "key": "5",
+            "nodeType": "host",
+            "props": Object {
+              "children": 5,
+              "value": 5,
+            },
+            "ref": null,
+            "rendered": 5,
+            "type": "option",
+          },
+        ],
+        "type": "select",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div>
+            Amount
+</div>,
+          <input
+            max={5}
+            min={1}
+            onChange={[Function]}
+            step={1}
+            type="range"
+            value={undefined}
+/>,
+          <select
+            onChange={[Function]}
+            value={undefined}
+>
+            <option
+                        value={1}
+            >
+                        1
+            </option>
+            <option
+                        value={2}
+            >
+                        2
+            </option>
+            <option
+                        value={3}
+            >
+                        3
+            </option>
+            <option
+                        value={4}
+            >
+                        4
+            </option>
+            <option
+                        value={5}
+            >
+                        5
+            </option>
+</select>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Amount",
+          },
+          "ref": null,
+          "rendered": "Amount",
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "max": 5,
+            "min": 1,
+            "onChange": [Function],
+            "step": 1,
+            "type": "range",
+            "value": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <option
+                value={1}
+>
+                1
+</option>,
+              <option
+                value={2}
+>
+                2
+</option>,
+              <option
+                value={3}
+>
+                3
+</option>,
+              <option
+                value={4}
+>
+                4
+</option>,
+              <option
+                value={5}
+>
+                5
+</option>,
+            ],
+            "onChange": [Function],
+            "value": undefined,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "1",
+              "nodeType": "host",
+              "props": Object {
+                "children": 1,
+                "value": 1,
+              },
+              "ref": null,
+              "rendered": 1,
+              "type": "option",
+            },
+            Object {
+              "instance": null,
+              "key": "2",
+              "nodeType": "host",
+              "props": Object {
+                "children": 2,
+                "value": 2,
+              },
+              "ref": null,
+              "rendered": 2,
+              "type": "option",
+            },
+            Object {
+              "instance": null,
+              "key": "3",
+              "nodeType": "host",
+              "props": Object {
+                "children": 3,
+                "value": 3,
+              },
+              "ref": null,
+              "rendered": 3,
+              "type": "option",
+            },
+            Object {
+              "instance": null,
+              "key": "4",
+              "nodeType": "host",
+              "props": Object {
+                "children": 4,
+                "value": 4,
+              },
+              "ref": null,
+              "rendered": 4,
+              "type": "option",
+            },
+            Object {
+              "instance": null,
+              "key": "5",
+              "nodeType": "host",
+              "props": Object {
+                "children": 5,
+                "value": 5,
+              },
+              "ref": null,
+              "rendered": 5,
+              "type": "option",
+            },
+          ],
+          "type": "select",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Input component should contain a select 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Input
+    label="Amount"
+    max={5}
+    min={1}
+    onChange={[Function]}
+    step={1}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div>
+          Amount
+</div>,
+        <input
+          max={5}
+          min={1}
+          onChange={[Function]}
+          step={1}
+          type="range"
+          value={undefined}
+/>,
+        <select
+          onChange={[Function]}
+          value={undefined}
+>
+          <option
+                    value={1}
+          >
+                    1
+          </option>
+          <option
+                    value={2}
+          >
+                    2
+          </option>
+          <option
+                    value={3}
+          >
+                    3
+          </option>
+          <option
+                    value={4}
+          >
+                    4
+          </option>
+          <option
+                    value={5}
+          >
+                    5
+          </option>
+</select>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Amount",
+        },
+        "ref": null,
+        "rendered": "Amount",
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "max": 5,
+          "min": 1,
+          "onChange": [Function],
+          "step": 1,
+          "type": "range",
+          "value": undefined,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <option
+              value={1}
+>
+              1
+</option>,
+            <option
+              value={2}
+>
+              2
+</option>,
+            <option
+              value={3}
+>
+              3
+</option>,
+            <option
+              value={4}
+>
+              4
+</option>,
+            <option
+              value={5}
+>
+              5
+</option>,
+          ],
+          "onChange": [Function],
+          "value": undefined,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "1",
+            "nodeType": "host",
+            "props": Object {
+              "children": 1,
+              "value": 1,
+            },
+            "ref": null,
+            "rendered": 1,
+            "type": "option",
+          },
+          Object {
+            "instance": null,
+            "key": "2",
+            "nodeType": "host",
+            "props": Object {
+              "children": 2,
+              "value": 2,
+            },
+            "ref": null,
+            "rendered": 2,
+            "type": "option",
+          },
+          Object {
+            "instance": null,
+            "key": "3",
+            "nodeType": "host",
+            "props": Object {
+              "children": 3,
+              "value": 3,
+            },
+            "ref": null,
+            "rendered": 3,
+            "type": "option",
+          },
+          Object {
+            "instance": null,
+            "key": "4",
+            "nodeType": "host",
+            "props": Object {
+              "children": 4,
+              "value": 4,
+            },
+            "ref": null,
+            "rendered": 4,
+            "type": "option",
+          },
+          Object {
+            "instance": null,
+            "key": "5",
+            "nodeType": "host",
+            "props": Object {
+              "children": 5,
+              "value": 5,
+            },
+            "ref": null,
+            "rendered": 5,
+            "type": "option",
+          },
+        ],
+        "type": "select",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div>
+            Amount
+</div>,
+          <input
+            max={5}
+            min={1}
+            onChange={[Function]}
+            step={1}
+            type="range"
+            value={undefined}
+/>,
+          <select
+            onChange={[Function]}
+            value={undefined}
+>
+            <option
+                        value={1}
+            >
+                        1
+            </option>
+            <option
+                        value={2}
+            >
+                        2
+            </option>
+            <option
+                        value={3}
+            >
+                        3
+            </option>
+            <option
+                        value={4}
+            >
+                        4
+            </option>
+            <option
+                        value={5}
+            >
+                        5
+            </option>
+</select>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Amount",
+          },
+          "ref": null,
+          "rendered": "Amount",
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "max": 5,
+            "min": 1,
+            "onChange": [Function],
+            "step": 1,
+            "type": "range",
+            "value": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <option
+                value={1}
+>
+                1
+</option>,
+              <option
+                value={2}
+>
+                2
+</option>,
+              <option
+                value={3}
+>
+                3
+</option>,
+              <option
+                value={4}
+>
+                4
+</option>,
+              <option
+                value={5}
+>
+                5
+</option>,
+            ],
+            "onChange": [Function],
+            "value": undefined,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "1",
+              "nodeType": "host",
+              "props": Object {
+                "children": 1,
+                "value": 1,
+              },
+              "ref": null,
+              "rendered": 1,
+              "type": "option",
+            },
+            Object {
+              "instance": null,
+              "key": "2",
+              "nodeType": "host",
+              "props": Object {
+                "children": 2,
+                "value": 2,
+              },
+              "ref": null,
+              "rendered": 2,
+              "type": "option",
+            },
+            Object {
+              "instance": null,
+              "key": "3",
+              "nodeType": "host",
+              "props": Object {
+                "children": 3,
+                "value": 3,
+              },
+              "ref": null,
+              "rendered": 3,
+              "type": "option",
+            },
+            Object {
+              "instance": null,
+              "key": "4",
+              "nodeType": "host",
+              "props": Object {
+                "children": 4,
+                "value": 4,
+              },
+              "ref": null,
+              "rendered": 4,
+              "type": "option",
+            },
+            Object {
+              "instance": null,
+              "key": "5",
+              "nodeType": "host",
+              "props": Object {
+                "children": 5,
+                "value": 5,
+              },
+              "ref": null,
+              "rendered": 5,
+              "type": "option",
+            },
+          ],
+          "type": "select",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Input component should contain an input of type range 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Input
+    label="Amount"
+    max={5}
+    min={1}
+    onChange={[Function]}
+    step={1}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div>
+          Amount
+</div>,
+        <input
+          max={5}
+          min={1}
+          onChange={[Function]}
+          step={1}
+          type="range"
+          value={undefined}
+/>,
+        <select
+          onChange={[Function]}
+          value={undefined}
+>
+          <option
+                    value={1}
+          >
+                    1
+          </option>
+          <option
+                    value={2}
+          >
+                    2
+          </option>
+          <option
+                    value={3}
+          >
+                    3
+          </option>
+          <option
+                    value={4}
+          >
+                    4
+          </option>
+          <option
+                    value={5}
+          >
+                    5
+          </option>
+</select>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Amount",
+        },
+        "ref": null,
+        "rendered": "Amount",
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "max": 5,
+          "min": 1,
+          "onChange": [Function],
+          "step": 1,
+          "type": "range",
+          "value": undefined,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <option
+              value={1}
+>
+              1
+</option>,
+            <option
+              value={2}
+>
+              2
+</option>,
+            <option
+              value={3}
+>
+              3
+</option>,
+            <option
+              value={4}
+>
+              4
+</option>,
+            <option
+              value={5}
+>
+              5
+</option>,
+          ],
+          "onChange": [Function],
+          "value": undefined,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "1",
+            "nodeType": "host",
+            "props": Object {
+              "children": 1,
+              "value": 1,
+            },
+            "ref": null,
+            "rendered": 1,
+            "type": "option",
+          },
+          Object {
+            "instance": null,
+            "key": "2",
+            "nodeType": "host",
+            "props": Object {
+              "children": 2,
+              "value": 2,
+            },
+            "ref": null,
+            "rendered": 2,
+            "type": "option",
+          },
+          Object {
+            "instance": null,
+            "key": "3",
+            "nodeType": "host",
+            "props": Object {
+              "children": 3,
+              "value": 3,
+            },
+            "ref": null,
+            "rendered": 3,
+            "type": "option",
+          },
+          Object {
+            "instance": null,
+            "key": "4",
+            "nodeType": "host",
+            "props": Object {
+              "children": 4,
+              "value": 4,
+            },
+            "ref": null,
+            "rendered": 4,
+            "type": "option",
+          },
+          Object {
+            "instance": null,
+            "key": "5",
+            "nodeType": "host",
+            "props": Object {
+              "children": 5,
+              "value": 5,
+            },
+            "ref": null,
+            "rendered": 5,
+            "type": "option",
+          },
+        ],
+        "type": "select",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div>
+            Amount
+</div>,
+          <input
+            max={5}
+            min={1}
+            onChange={[Function]}
+            step={1}
+            type="range"
+            value={undefined}
+/>,
+          <select
+            onChange={[Function]}
+            value={undefined}
+>
+            <option
+                        value={1}
+            >
+                        1
+            </option>
+            <option
+                        value={2}
+            >
+                        2
+            </option>
+            <option
+                        value={3}
+            >
+                        3
+            </option>
+            <option
+                        value={4}
+            >
+                        4
+            </option>
+            <option
+                        value={5}
+            >
+                        5
+            </option>
+</select>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Amount",
+          },
+          "ref": null,
+          "rendered": "Amount",
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "max": 5,
+            "min": 1,
+            "onChange": [Function],
+            "step": 1,
+            "type": "range",
+            "value": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <option
+                value={1}
+>
+                1
+</option>,
+              <option
+                value={2}
+>
+                2
+</option>,
+              <option
+                value={3}
+>
+                3
+</option>,
+              <option
+                value={4}
+>
+                4
+</option>,
+              <option
+                value={5}
+>
+                5
+</option>,
+            ],
+            "onChange": [Function],
+            "value": undefined,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "1",
+              "nodeType": "host",
+              "props": Object {
+                "children": 1,
+                "value": 1,
+              },
+              "ref": null,
+              "rendered": 1,
+              "type": "option",
+            },
+            Object {
+              "instance": null,
+              "key": "2",
+              "nodeType": "host",
+              "props": Object {
+                "children": 2,
+                "value": 2,
+              },
+              "ref": null,
+              "rendered": 2,
+              "type": "option",
+            },
+            Object {
+              "instance": null,
+              "key": "3",
+              "nodeType": "host",
+              "props": Object {
+                "children": 3,
+                "value": 3,
+              },
+              "ref": null,
+              "rendered": 3,
+              "type": "option",
+            },
+            Object {
+              "instance": null,
+              "key": "4",
+              "nodeType": "host",
+              "props": Object {
+                "children": 4,
+                "value": 4,
+              },
+              "ref": null,
+              "rendered": 4,
+              "type": "option",
+            },
+            Object {
+              "instance": null,
+              "key": "5",
+              "nodeType": "host",
+              "props": Object {
+                "children": 5,
+                "value": 5,
+              },
+              "ref": null,
+              "rendered": 5,
+              "type": "option",
+            },
+          ],
+          "type": "select",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
