@@ -26,7 +26,7 @@ const api = {
   fetchOffer: sinon.stub().returns(Promise.resolve(offerResponse))
 };
 
-describe('App component', () => {
+xdescribe('App component', () => {
   let wrapper;
 
   beforeEach(() => {
